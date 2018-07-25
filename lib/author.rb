@@ -15,11 +15,11 @@ class Author
     post.author = self #the title 'argument/parameter' is going to be modified by the author 'method' and set to self.
   end
 
-  def add_post_by_title(title)
-    @@post_count += 1
-    post = Post.new(title)
-    self.posts << post
-    post.author = self
+  def add_post_by_title(title) #takes in arg of title
+    @@post_count += 1 #need to increase count by 1 for the class var to store all the intances that are initialized
+    post = Post.new(title) #set local var 'post' equal to class method Post (create new) w title given as arguemnt. Author, Title, Post are now all connected.
+    self.posts << post #push the new local var of 'post' which knows what author and title go with the post into self.post
+    post.author = self #connects the post and author to self (author knowns his own list)
   end
 
   def self.post_count #class method! need to call it on itself
